@@ -34,6 +34,8 @@ Stacked Models (Ensembling multiple models)
 
 Other advanced algorithms for performance optimization
 
+Visualization Tools: Tableau for creating interactive dashboards
+
 📈 Key Insights
 
 Identifying key factors leading to customer churn
@@ -41,3 +43,11 @@ Identifying key factors leading to customer churn
 Understanding the impact of contract types and payment methods on retention
 
 Deploying machine learning models for business-driven decision-making
+
+📦 Deliverables
+
+Machine Learning Models: Trained and optimized models for predicting customer churn
+
+Tableau Dashboard: Interactive visualizations to explore key insights and trends
+
+EDA & Feature Engineering Scripts: R scripts for data preprocessing and feature selection
