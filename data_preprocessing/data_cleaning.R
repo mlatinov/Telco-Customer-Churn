@@ -39,5 +39,6 @@ telco_proper_types$senior_citizen <- factor(telco_proper_types$senior_citizen)
 
 ## Export the cleaned data 
 write.csv(telco_proper_types,"telco.cleaned.csv")
+write_rds(telco_proper_types,"telco.clean.rds")
 
 
