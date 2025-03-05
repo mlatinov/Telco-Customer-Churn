@@ -27,14 +27,14 @@ auto_ml <-h2o.automl(
   nfolds = 5,                                  # 5-fold cross-validation
   max_models = 20,                             # train up to 20 different models
   keep_cross_validation_predictions = TRUE,
-  max_runtime_secs = 60 * 180,          # 3h run time 
-  stopping_metric = "AUC",              # The process will stop when the AUC doesn't improve
-  stopping_rounds = 50,                 # It will stop if AUC doesn't improve for 50 consecutive rounds
-  stopping_tolerance = 0.01,            # Allow for very small improvements in the AUC
+  max_runtime_secs = 60 * 180,                 # 3h run time 
+  stopping_metric = "AUC",                     # The process will stop when the AUC doesn't improve
+  stopping_rounds = 50,                        # It will stop if AUC doesn't improve for 50 consecutive rounds
+  stopping_tolerance = 0.01,                   # Allow for very small improvements in the AUC
   max_runtime_secs_per_model = 60 * 10   
 )
 
-
+h2o.removeAll()
 
 
 

@@ -55,7 +55,7 @@ for ( i in seq_len(nrow(rf_grid))){
   )
   
   # Get the error
-  rf_grid$pred_error[i] <- tuned_ranger$prediction.error
+  rf_grid$pred_error[i] <- rf_fit$prediction.error
 }
 # Arrange  models and save the best model
 hyperparams <- rf_grid %>%
@@ -148,8 +148,12 @@ h2o_rf_tune <- h2o.randomForest(
 )
 
 ## Save the models
+# Specify the path and name
+model_save_path <- "C:/Users/Huawei/OneDrive/Telco_Churn_project/Telco-Customer-Churn/Models/Random_Forest/Random_Forest_models/Random_Forest_model.zip"
+
 saveRDS(rf_tune,file = "ranger_RF_tune")
-h2o.saveModel(h2o_rf_tune, path = "C:/Users/Huawei/OneDrive/Telco_Churn_project/Telco-Customer-Churn/Models/Random_Forest/Random_Forest_models")
+
+h2o.saveModel(h2o_rf_tune, path = model_save_path)
 
 ## Remove the cluster
 h2o.removeAll()

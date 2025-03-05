@@ -130,6 +130,20 @@ tree_sp_grid$cv_error <- pmap_dbl(  # pmap_dbl() runs model_fit() on each row of
 ## Save the best params
 gbm_tune_params <- tree_sp_grid %>% arrange(cv_error) %>% head(1)
 
+## Fit the final model
+
+gbm_model_final <- gbm(
+  formula = churn ~ .,
+  distribution = "bernoulli",
+  data = train_set,
+  weights = weights,
+  cv.folds = 10,
+  n.trees = 1600,
+  n.minobsinnode = gbm_tune_params$n.minobsinnode,
+  shrinkage = gbm_tune_params$shrinkage,
+  interaction.depth = gbm_tune_params$interaction.depth
+)
+
 ## Stochastic GBM  with h2o ##
 
 # Start h2o
@@ -194,7 +208,9 @@ best_model_id <- h2o_grid_perf@model_ids[[1]]
 best_model <- h2o.getModel(best_model_id)
 
 ## Save the models
-
+saveRDS(weighted_gbm_b,file = "weighted_gbm")
+saveRDS(gbm_model_final,file = "gbm_model_tuned")
+h2o.saveModel(best_model, path = "C:\\Users\\Huawei\\OneDrive\\Telco_Churn_project\\Telco-Customer-Churn\\Models\\GBMs\\GBMs_Models")
 
 h2o.removeAll()
 
