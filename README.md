@@ -22,7 +22,7 @@ Demographics: Gender, age range, partner, and dependent status.
 
 Programming Language: R
 
-Libraries: tidyverse, caret, h2o, ranger, xgboost, gbm, data.table, ggplot2
+Libraries: tidyverse, caret, h2o, ranger, gbm, data.table, ggplot2
 
 Machine Learning Models:
 
@@ -30,7 +30,7 @@ Random Forest
 
 Gradient Boosting Machines (GBM)
 
-Stacked Models (Ensembling multiple models)
+K-Nearest-Neighbour KNN
 
 Other advanced algorithms for performance optimization
 
