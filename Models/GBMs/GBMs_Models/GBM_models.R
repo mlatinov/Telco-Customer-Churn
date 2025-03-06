@@ -183,6 +183,7 @@ h2o_grid_gbm <- h2o.grid(
   grid_id = "grid_gbm",
   x = X,
   y = Y,
+  distribution = "bernoulli",
   weights_column = "weights", # Assign higher weights to the minority class
   training_frame = train_h2o,
   hyper_params = hyper_grid_h2o,
@@ -213,6 +214,7 @@ saveRDS(gbm_model_final,file = "gbm_model_tuned")
 h2o.saveModel(best_model, path = "C:\\Users\\Huawei\\OneDrive\\Telco_Churn_project\\Telco-Customer-Churn\\Models\\GBMs\\GBMs_Models")
 
 h2o.removeAll()
+
 
 
 
