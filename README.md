@@ -48,6 +48,4 @@ Deploying machine learning models for business-driven decision-making
 
 Machine Learning Models: Trained and optimized models for predicting customer churn
 
-Tableau Dashboard: Interactive visualizations to explore key insights and trends
-
 EDA & Feature Engineering Scripts: R scripts for data preprocessing and feature selection
